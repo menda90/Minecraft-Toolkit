@@ -1,4 +1,7 @@
-ImageConverter/Debug/
+*.pdb
+*.ilk
+*.exe
+*.suo
 ImageConverter/ImageConverter/Debug/
 ImageConverter/ipch/
 ImageConverter/ImageConverter.opensdf
