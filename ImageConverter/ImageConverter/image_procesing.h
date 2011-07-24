@@ -24,7 +24,10 @@ public:
 
 	void run(){}; // do uzupelnienia
 
+	void create_image();
+
 	SDL_Surface *mImage;
+	SDL_Surface *mResultImage;
 
 	unsigned int bpp;
 	unsigned int maxIndex;

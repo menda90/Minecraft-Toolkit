@@ -41,7 +41,7 @@ void App::load()
         return;  
     }
 
-	mEngine.mScreen = SDL_SetVideoMode( 800, 600, 32, SDL_SWSURFACE ); //Ustaw wymiary okna
+	mEngine.mScreen = SDL_SetVideoMode( 1600, 600, 32, SDL_SWSURFACE ); //Ustaw wymiary okna
 	
 	SDL_WM_SetCaption( "ImageConverter", NULL ); //Ustaw tytul
 

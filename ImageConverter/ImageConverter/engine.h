@@ -6,6 +6,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
+#include <SDL_draw.h>
 #include <fstream>
 #include <iostream>
 #include <string>
