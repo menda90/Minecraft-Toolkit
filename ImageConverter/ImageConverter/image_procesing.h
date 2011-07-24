@@ -1,6 +1,9 @@
 #ifndef _MODULE_IMAGEPROCESSING_
 #define _MODULE_IMAGEPROCESSING_
 
+
+#define MAX_HEIGHT 64
+
 #include "engine.h"
 #include "module.h"
 using namespace EngineV1Namespace;
@@ -26,6 +29,8 @@ public:
 	unsigned int bpp;
 	unsigned int maxIndex;
 	unsigned char* pixels;
+
+	unsigned int** pixel_matrix;
 
 
 };

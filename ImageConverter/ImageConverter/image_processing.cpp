@@ -38,11 +38,32 @@ void ImageProcessing::init()
 	printf("[Module %s] maxIndex: %d\n", mName.c_str(), maxIndex);
 
 	unsigned int temp = 0;
+	unsigned int tempX = 0;
+	unsigned int tempY = 0;
+
+	pixel_matrix = new unsigned int*[mImage->h];
+	for(int i = 0 ; i < mImage->h ; i++)
+	{
+		pixel_matrix[i] = new unsigned int[mImage->w];
+	}
+
 
 	for(unsigned i = 0 ; i < maxIndex ; i+=bpp)
 	{
 		memcpy(&temp, &pixels[i], bpp);
 		temp+= 16777216;
+
+		if(tempX == mImage->w)
+		{
+			tempX = 0;
+			tempY++;
+		}
+
+		pixel_matrix[tempX][tempY] = temp;
+
+		tempX++;
+
+	
 		printf("[Module %s] int at position %d is %d\n", mName.c_str(), i/bpp, temp);
 	}
 }
