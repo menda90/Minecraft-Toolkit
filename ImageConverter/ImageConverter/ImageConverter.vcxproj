@@ -13,11 +13,14 @@
   <ItemGroup>
     <ClInclude Include="..\ImageConverter\app.h" />
     <ClInclude Include="engine.h" />
+    <ClInclude Include="image_procesing.h" />
+    <ClInclude Include="module.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ImageConverter\app.cpp" />
     <ClCompile Include="..\ImageConverter\main.cpp" />
     <ClCompile Include="engine.cpp" />
+    <ClCompile Include="image_processing.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0ABD7CD7-87E9-4EEA-B2EB-B8CA1FE94366}</ProjectGuid>

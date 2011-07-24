@@ -1,6 +1,9 @@
 #include "app.h"
 /*******************************************************************************************/
-using namespace Engine;
+using namespace EngineV1Namespace;
+
+
+
 App::App()
 {
 	load();
@@ -8,8 +11,7 @@ App::App()
 	while(!mEnd)
 	{
 		mCurrentTime = SDL_GetTicks();
-		
-		//mPastTimeCounter++;
+	
 		if(mCurrentTime - mPastTimeCounter >= 100)
 		{
 			run_keys();
@@ -39,7 +41,7 @@ void App::load()
         return;  
     }
 
-	mScreen = SDL_SetVideoMode( 800, 600, 32, SDL_SWSURFACE ); //Ustaw wymiary okna
+	mEngine.mScreen = SDL_SetVideoMode( 800, 600, 32, SDL_SWSURFACE ); //Ustaw wymiary okna
 	
 	SDL_WM_SetCaption( "ImageConverter", NULL ); //Ustaw tytul
 
@@ -57,6 +59,21 @@ void App::load()
 	freopen("CON", "w", stderr); // redirects stderr
 
 	printf("[App] Function LOAD - APP started\n");
+
+	// add modules
+
+	mModules.push_back(new ImageProcessing("FontRendering"));
+	mModules.push_back(new ImageProcessing("ImageProcessing"));
+
+
+	/// load all modules
+	for(int i = 0 ; i < mModules.size() ; i++)
+	{
+		mModules.at(i)->set_engine(&mEngine);
+		mModules.at(i)->load();
+		///printf("%s\n",typeid(mModules.at(i)).name());
+
+	}
 
 }
 
@@ -107,13 +124,23 @@ void App::run()
 void App::render()
 {
 	// rysuj biale tlo
-	SDL_FillRect( mScreen, &mScreen->clip_rect, SDL_MapRGB( mScreen->format, 0xFF, 0xFF, 0xFF ) );
+	SDL_FillRect(mEngine.mScreen, &mEngine.mScreen->clip_rect, SDL_MapRGB( mEngine.mScreen->format, 0xFF, 0xFF, 0xFF ) );
 
+
+
+
+	// render all modules
+	for(int i = 0 ; i < mModules.size() ; i++)
+	{
+		mModules.at(i)->render();
+	}
+
+	
 
 	
 
 	//Aktualizuj obraz
-    SDL_Flip( mScreen );
+    SDL_Flip( mEngine.mScreen );
 }
 
 /*******************************************************************************************/

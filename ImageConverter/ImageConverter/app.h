@@ -1,9 +1,14 @@
+#ifndef _CLASS_APP_
+#define _CLASS_APP_
+
 /// @file
 
 #include "engine.h"
+#include "image_procesing.h"
 
 ///@class App
 ///@brief Glowna klasa, ktora tworzy okno aplikacji
+
 class App
 {
 	public:
@@ -24,8 +29,12 @@ class App
 	
 	void quit(); // Wyjdz z aplikacji
 	
+	SDL_Surface *mScreen;
+
+	EngineV1 mEngine;
 
 	private:
+
 
 		bool mEnd; // koniec app
 
@@ -34,8 +43,15 @@ class App
 		int mPastTimeCounter; /// Czas od ostatniego sprawdzenia czasu
 
 		SDL_Event mKeyEvent; /// Zdarzenie
-		SDL_Surface * mScreen; /// NASZE OKNO
+		
+
+		std::vector<Module*> mModules;
+
+
+		
 
 
 
 };
+
+#endif

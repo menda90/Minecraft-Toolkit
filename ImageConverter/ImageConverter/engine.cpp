@@ -1,6 +1,6 @@
 #include "engine.h"
 
-namespace Engine
+namespace EngineV1Namespace
 {
 
 SDL_Surface* load_texture(std::string filename)
