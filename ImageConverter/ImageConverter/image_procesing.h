@@ -21,6 +21,10 @@ public:
 
 	SDL_Surface *mImage;
 
+	unsigned int bpp;
+	unsigned int maxIndex;
+	unsigned char* pixels;
+
 
 };
 

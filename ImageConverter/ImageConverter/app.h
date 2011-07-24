@@ -4,6 +4,7 @@
 /// @file
 
 #include "engine.h"
+#include "font_rendering.h"
 #include "image_procesing.h"
 
 ///@class App

@@ -62,7 +62,7 @@ void App::load()
 
 	// add modules
 
-	mModules.push_back(new ImageProcessing("FontRendering"));
+	mModules.push_back(new FontRendering("FontRendering"));
 	mModules.push_back(new ImageProcessing("ImageProcessing"));
 
 
