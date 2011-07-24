@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="..\ImageConverter\app.h" />
     <ClInclude Include="engine.h" />
+    <ClInclude Include="font_rendering.h" />
     <ClInclude Include="image_procesing.h" />
     <ClInclude Include="module.h" />
   </ItemGroup>
@@ -20,6 +21,7 @@
     <ClCompile Include="..\ImageConverter\app.cpp" />
     <ClCompile Include="..\ImageConverter\main.cpp" />
     <ClCompile Include="engine.cpp" />
+    <ClCompile Include="font_rendering.cpp" />
     <ClCompile Include="image_processing.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -54,7 +56,7 @@
     <IncludePath>$(SolutionDir)..\SDK\SDL-1.2.14\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>\SDK\SDL_ttf-2.0.10\lib;\SDK\SDL_image-1.2.10\lib;\SDK\SDL-1.2.14\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)..\SDK\SDL-1.2.14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>D:\SDK\SDL_Draw\include;D:\SDK\SDL_ttf-2.0.10\include;D:\SDK\SDL_image-1.2.10\include;D:\SDK\SDL-1.2.14\include;$(IncludePath)</IncludePath>

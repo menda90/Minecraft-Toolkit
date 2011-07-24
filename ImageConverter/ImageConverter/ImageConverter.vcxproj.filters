@@ -33,6 +33,9 @@
     <ClInclude Include="module.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="font_rendering.h">
+      <Filter>Header Files\modules</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ImageConverter\main.cpp">
@@ -45,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="image_processing.cpp">
+      <Filter>Source Files\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="font_rendering.cpp">
       <Filter>Source Files\modules</Filter>
     </ClCompile>
   </ItemGroup>
