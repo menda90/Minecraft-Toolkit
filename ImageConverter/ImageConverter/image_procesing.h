@@ -15,6 +15,8 @@ public:
 
 	virtual void load();
 
+	virtual void init();
+
 	virtual void render();
 
 	void run(){}; // do uzupelnienia

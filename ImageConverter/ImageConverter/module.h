@@ -14,7 +14,7 @@ public:
 
 	virtual void load()
 	{
-		printf("Module %s loaded\n", mName.c_str());
+		printf("\nModule %s loaded\n", mName.c_str());
 
 	}
 
@@ -22,6 +22,12 @@ public:
 	{
 		mEngine = _engine;
 	}
+
+
+	virtual void init()
+	{
+		printf("\nModule %s initiation\n", mName.c_str());
+	};
 
 	virtual void render(){};
 

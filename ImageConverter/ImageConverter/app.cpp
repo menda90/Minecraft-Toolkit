@@ -58,7 +58,7 @@ void App::load()
 	freopen("CON", "w", stdout); // redirects stdout
 	freopen("CON", "w", stderr); // redirects stderr
 
-	printf("[App] Function LOAD - APP started\n");
+	printf("\n[App] Function LOAD - APP started\n");
 
 	// add modules
 
@@ -81,6 +81,9 @@ void App::init()
 {
 	printf("[App] Function INIT - APP restarted\n");
 
+	for(int i = 0 ; i < mModules.size(); i++)
+		mModules.at(i)->init();
+
 }
 
 
@@ -97,6 +100,10 @@ void App::run_keys()
 
 					case SDLK_ESCAPE: 
 						mEnd = true;
+					break;
+
+					case SDLK_F2:
+						init();
 					break;
 				}
 			}	
