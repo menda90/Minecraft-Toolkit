@@ -57,6 +57,8 @@ void ImageProcessing::init()
 		{
 			tempX = 0;
 			tempY++;
+
+
 		}
 
 		pixel_matrix[tempX][tempY] = temp;
