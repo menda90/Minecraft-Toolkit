@@ -19,7 +19,7 @@ void ImageProcessing::load()
 
 	unsigned int temp = 0;
 
-	for(unsigned i = 0 ; i < (maxIndex+1)/2 ; i+=bpp)
+	for(unsigned i = 0 ; i < maxIndex ; i+=bpp)
 	{
 		memcpy(&temp, &pixels[i], bpp);
 		printf("[Module %s] int at position %d is %d\n", mName.c_str(), i/bpp, temp);
