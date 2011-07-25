@@ -29,6 +29,8 @@ public:
 	SDL_Surface *mImage;
 	SDL_Surface *mResultImage;
 
+	unsigned int dy;
+
 	unsigned int bpp;
 	unsigned int maxIndex;
 	unsigned char* pixels;
